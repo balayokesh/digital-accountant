@@ -45,7 +45,7 @@ router.route('/addincome').post((req, res) => {
         .catch(err => res.status(400).json('Error: '+err))
 });
 
-router.route('/getexpense').get((req, res) => {
+router.route('/getexpense').post((req, res) => {
     const user_id = req.body.user_id;
 
     expenses.find({"user_id": user_id})
@@ -53,7 +53,7 @@ router.route('/getexpense').get((req, res) => {
         .catch(err => res.status(400).json('Error: '+err))
 });
 
-router.route('/getincome').get((req, res) => {
+router.route('/getincome').post((req, res) => {
     const user_id = req.body.user_id;
 
     incomes.find({"user_id": user_id})
